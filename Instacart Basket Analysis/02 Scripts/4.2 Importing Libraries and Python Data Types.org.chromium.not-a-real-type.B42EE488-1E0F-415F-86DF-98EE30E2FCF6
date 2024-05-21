@@ -1,0 +1,287 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "e33ee060",
+   "metadata": {},
+   "source": [
+    "# 01. Importing libraries"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "3386a41e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Import libraries\n",
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "import os"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2715151f",
+   "metadata": {},
+   "source": [
+    "# 0.2 Python data types"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "6528dc90",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x = 30\n",
+    "y = 70"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "b012c490",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "100"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "x+y"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "116ec5fd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x = 2\n",
+    "y = 50"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "ef91b6fb",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "100"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "x*y"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "a416df12",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "y= 50\n",
+    "z= 10/5"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "bbdb6b5a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "100.0"
+      ]
+     },
+     "execution_count": 10,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "y*z"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "a4a57753",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x = 12.58\n",
+    "y = 80.5"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "221137aa",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "6.399046104928458"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "y/x"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "b0b80026",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x = 'mickey '\n",
+    "y = 'mouse'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "a39d84d4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "z = (x + y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "43c1f4c7",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'mickey mouse'"
+      ]
+     },
+     "execution_count": 18,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "z"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "a422d111",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Greeting = \"Hello, this is to let you know that you're appointment has been confirmed on \"\n",
+    "appointment = 'July 20th'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "fe138b31",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"Hello, this is to let you know that you're appointment has been confirmed on July 20th\""
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "Greeting + appointment"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "0a84766d",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, 100 times of me, '"
+      ]
+     },
+     "execution_count": 24,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\"100 times of me, \" * 100"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8b9cc850",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
